@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+
+<h2>User Profile</h2>
+
+<p>First Name: {{ firstname }}</p>
+<p>Last Name: {{ lastname }}</p>
+<p>Email: {{ email }}</p>
+<p>Address: {{ address }}</p>
+
+<hr>
+
+<h3>Upload Limerick.txt</h3>
+
+<form method="POST"
+      action="/upload/{{ username }}"
+      enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>
+
+{% if filename %}
+    <p><b>Uploaded File:</b> {{ filename }}</p>
+
+    {% if word_count is not none %}
+        <p><b>Word Count:</b> {{ word_count }}</p>
+    {% endif %}
+
+    <a href="/download/{{ filename }}">
+        <button>Download File</button>
+    </a>
+{% endif %}
+
+<hr>
+
+<a href="/login">Re-Login</a>
+
+</body>
+</html>
+

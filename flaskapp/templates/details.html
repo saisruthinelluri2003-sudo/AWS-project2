@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Details</title></head>
+<body>
+  <h2>Enter User Details</h2>
+
+  <form method="POST" action="/details_save">
+    <input type="hidden" name="username" value="{{ username }}">
+
+    First Name:<br>
+    <input type="text" name="firstname" required><br><br>
+
+    Last Name:<br>
+    <input type="text" name="lastname" required><br><br>
+
+    Email:<br>
+    <input type="email" name="email" required><br><br>
+
+    Address:<br>
+    <input type="text" name="address" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
